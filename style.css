@@ -1,0 +1,194 @@
+body{
+  margin:0;
+  padding:0;
+  font-family:'Segoe UI',sans-serif;
+  text-align:center;
+  color:#5C554A;
+  overflow-x:hidden;
+  background:#EDE9DF;
+}
+
+/* Pontinhos suaves */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image: radial-gradient(rgba(92,85,74,0.12) 1px, transparent 1px);
+  background-size:55px 55px;
+  opacity:0.25;
+  animation:moverEstrelas 80s linear infinite;
+  z-index:-1;
+}
+
+@keyframes moverEstrelas{
+  from{ transform:translate(0,0); }
+  to{ transform:translate(-300px,-300px); }
+}
+
+/* Entrada */
+#entrada{
+  position:fixed;
+  inset:0;
+  background:#EDE9DF;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.stitch{
+  width:120px;
+  animation:flutuar 2.5s ease-in-out infinite;
+}
+
+@keyframes flutuar{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+  100%{transform:translateY(0);}
+}
+
+#entrada button{
+  padding:12px 28px;
+  border-radius:30px;
+  border:none;
+  background: linear-gradient(45deg,#BFAF9B,#D8D2C5);
+  color:#5C554A;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* Título */
+.titulo{
+  margin-top:34px;
+  font-family:'Great Vibes',cursive;
+  font-size:44px;
+}
+
+/* Mensagem */
+.mensagem{
+  padding:0 20px;
+  font-size:18px;
+  min-height:44px;
+}
+
+/* Botão carta */
+.btn-carta{
+  margin:20px;
+  padding:10px 22px;
+  border-radius:25px;
+  border:none;
+  background:linear-gradient(45deg,#BFAF9B,#D8D2C5);
+  color:#5C554A;
+  cursor:pointer;
+}
+
+/* Modal carta */
+#carta-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(8px);
+  justify-content:center;
+  align-items:center;
+  z-index:30;
+}
+
+.carta{
+  background:white;
+  color:#5C554A;
+  padding:30px;
+  border-radius:25px;
+  max-width:320px;
+}
+
+.carta h3{
+  font-family:'Great Vibes',cursive;
+  font-size:30px;
+}
+
+.carta button{
+  margin-top:15px;
+  padding:8px 18px;
+  border-radius:20px;
+  border:none;
+  background:#EDE9DF;
+  cursor:pointer;
+}
+
+/* Galeria */
+.galeria{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+  padding:42px 22px 170px 22px;
+}
+
+.galeria img{
+  width:92px;
+  height:92px;
+  object-fit:cover;
+  border-radius:22px;
+  cursor:pointer;
+}
+
+/* Player */
+.player{
+  position:fixed;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90%;
+  max-width:520px;
+  background:rgba(255,255,255,0.8);
+  backdrop-filter:blur(15px);
+  border-radius:20px;
+  padding:12px 18px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.capa{
+  width:55px;
+  height:55px;
+  border-radius:15px;
+}
+
+#play{
+  background:linear-gradient(45deg,#BFAF9B,#D8D2C5);
+  border:none;
+  border-radius:50%;
+  width:48px;
+  height:48px;
+  cursor:pointer;
+}
+
+/* Modal imagem */
+#modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+}
+
+#modal img{
+  max-width:90%;
+  max-height:85%;
+  border-radius:25px;
+}
+
+/* Corações */
+.coracao{
+  position:fixed;
+  bottom:-30px;
+  opacity:0.35;
+  animation:subirCoracao linear forwards;
+}
+
+@keyframes subirCoracao{
+  from{transform:translateY(0);}
+  to{transform:translateY(-110vh);}
+}

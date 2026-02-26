@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Você 🤍</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Tela de Entrada -->
+  <div id="entrada">
+    <img src="stitch.png" class="stitch">
+    <h2>Tenho uma surpresa pra você 🤍</h2>
+    <button onclick="abrirSite()">Entrar</button>
+  </div>
+
+  <!-- Conteúdo -->
+  <div id="conteudo" style="display:none;">
+
+    <h1 class="titulo">Nosso Momento 🤍</h1>
+    <p id="mensagem" class="mensagem"></p>
+
+    <!-- Botão da carta -->
+    <button class="btn-carta" onclick="abrirCarta()">Abrir minha cartinha 🤍</button>
+
+    <!-- Galeria -->
+    <div class="galeria">
+      <img src="foto1.jpg" data-musica="musica1.mp3">
+      <img src="foto2.jpg" data-musica="musica2.mp3">
+      <img src="foto3.jpg" data-musica="musica3.mp3">
+      <img src="foto4.jpg" data-musica="musica4.mp3">
+      <img src="foto5.jpg" data-musica="musica5.mp3">
+      <img src="foto6.jpg" data-musica="musica6.mp3">
+      <img src="foto7.jpg" data-musica="musica7.mp3">
+    </div>
+
+    <!-- Player -->
+    <div class="player">
+      <img src="capa.jpg" class="capa">
+      <div class="info">
+        <span id="nome-musica">Momento Especial 🤍</span>
+        <div class="progresso-container">
+          <span id="tempo-atual">0:00</span>
+          <input type="range" id="barra" value="0">
+          <span id="tempo-total">0:00</span>
+        </div>
+      </div>
+      <button id="play">▶</button>
+      <audio id="musica"></audio>
+    </div>
+
+  </div>
+
+  <!-- Modal Carta -->
+  <div id="carta-modal">
+    <div class="carta">
+      <h3>Para você 💌</h3>
+      <p>
+        Desde que você entrou na minha vida,
+        tudo começou a ter mais sentido.
+        Cada conversa, cada risada,
+        cada momento se tornou algo especial.
+        <br><br>
+        Esse site é só uma pequena forma
+        de mostrar o quanto você é importante pra mim.
+        🤍
+      </p>
+      <button onclick="fecharCarta()">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Modal Imagem -->
+  <div id="modal" onclick="fecharModal()">
+    <img id="imgModal">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
